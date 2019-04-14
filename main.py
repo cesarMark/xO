@@ -69,20 +69,17 @@ while(flag > 0): #Flag is defined as the sequence of the game
     displayMat(matrix)
     print("Input the coordinates [row] (space) [column]")
     x, y = map(int, input().split())
-    if x > 2 or x < 0 or y > 2 or y < 0: #One of the tests that makes sure that the player didn't input any wrong coordinates
-        continue
-    if  matrix[x][y] == 'O' or matrix[x][y] == 'X':
-        print("")
-        print("*****Please try a different place where X or O are not located*****")
-        print("")
+    if x > 2 or x < 0 or y > 2 or y < 0 or matrix[x][y] == 'O' or matrix[x][y] == 'X': #One of the tests that makes sure that the player didn't input any wrong coordinates
         continue
     matrix[x][y] = 'X'
-    computerMove(matrix)
     if checkWin(matrix) == True: #Checks if the player won
-        print("CONGRATZ! YOU WON!")
-        flag = 0
+         os.system('cls')
+         displayMat(matrix)
+         flag = 0
+         print("CONGRATZ! YOU WON!")
+    computerMove(matrix)
+    if checkWin(matrix) == False: #The false reperesents the computer and if the function will return false than the computer won
+        os.system('cls')
         displayMat(matrix)
-    elif checkWin(matrix) == False: #The false reperesents the computer and if the function will return false than the computer won
         print("YOU LOST :( , TRY AGAIN")
-        displayMat(matrix)
         flag = 0
