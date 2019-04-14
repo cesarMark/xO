@@ -69,8 +69,6 @@ while(flag > 0): #Flag is defined as the sequence of the game
     if checkWin(matrix) == True: #Checks if the player won
         print("CONGRATZ! YOU WON!")
         flag = 0
-        continue
     elif checkWin(matrix) == False: #The false reperesents the computer and if the function will return false than the computer won
         print("YOU LOST :( , TRY AGAIN")
         flag = 0
-        continue
