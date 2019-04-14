@@ -56,7 +56,6 @@ while(flag > 0): #Flag is defined as the sequence of the game
          print("________________")
     print("Input the coordinates [row] (space) [column]")
     x, y = map(int, input().split())
-    print("The value of X and Y is" , x , y)
     if x > 2 or x < 0 or y > 2 or y < 0: #One of the tests that makes sure that the player didn't input any wrong coordinates
         continue
     if  matrix[x][y] == 'O' or matrix[x][y] == 'X':
