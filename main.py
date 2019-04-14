@@ -35,21 +35,9 @@ def checkWin(mat):
                 countXCol += 1
             if matrix[j][i] == 'O':
                 countOCol += 1
-        if countXRow == 3:
+        if countXRow == 3 or countXDiagRight == 3 or countXCol == 3 or countXDiagLeft == 3:
             return True
-        if countXDiagRight == 3:
-            return True
-        if countODiagRight == 3:
-            return False
-        if countXDiagLeft == 3:
-            return True
-        if countXCol == 3:
-            return True
-        if countORow == 3:
-            return False
-        if countODiagLeft == 3:
-            return False
-        if countOCol == 3:
+        elif countODiagRight == 3 or countORow == 3 or countODiagLeft == 3 or countOCol == 3:
             return False
 #This function implements the computer's move by picking 2 random coordinates and choosing it as long as its not been taken
 def computerMove(mat):
