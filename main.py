@@ -83,3 +83,4 @@ while(flag > 0): #Flag is defined as the sequence of the game
         displayMat(matrix)
         print("YOU LOST :( , TRY AGAIN")
         flag = 0
+input('Press ENTER to exit')
