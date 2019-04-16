@@ -6,7 +6,6 @@ def displayMat(mat): #Function that displays the matrix
              print("|",matrix[i][j],end=" |")
          print("")
          print("________________")
-
 #This function counts if one of the players won the game by checking if the whole row/column/diagonal is full
 def checkWin(mat):
     for(i) in range(0 , 3):
@@ -49,15 +48,24 @@ def computerMove(mat):
              matrix[compRow][compColumn] = 'O'
              flag = 0
 flag = 1
+count = 0
 matrix = ([['_','_','_'],
            ['_','_','_'],
            ['_','_','_']])
 while(flag > 0): #Flag is defined as the sequence of the game 
+    count += 2
+    if count == 10:
+        os.system('cls')
+        displayMat(matrix)
+        print("It's even!")
+        flag = 0
+        break
     os.system('cls')
     displayMat(matrix)
     print("Input the coordinates [row] (space) [column]")
     x, y = map(int, input().split())
     if x > 2 or x < 0 or y > 2 or y < 0 or matrix[x][y] == 'O' or matrix[x][y] == 'X': #One of the tests that makes sure that the player didn't input any wrong coordinates
+        count -= 2
         continue
     matrix[x][y] = 'X'
     if checkWin(matrix) == True: #Checks if the player won
