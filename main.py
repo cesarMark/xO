@@ -57,7 +57,7 @@ while(flag > 0): #Flag is defined as the sequence of the game
     if count == 10:
         os.system('cls')
         displayMat(matrix)
-        print("It's even!")
+        print("It's draw!")
         flag = 0
         break
     os.system('cls')
